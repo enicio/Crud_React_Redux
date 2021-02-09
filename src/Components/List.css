@@ -1,0 +1,23 @@
+.subtitle {
+  display: flex;
+}
+
+.subtitle h1 {
+  display: flex;
+  margin: auto;
+  padding: 5px;
+}
+
+.addUser {
+  margin-top: -24px;
+  margin-left: 83vw;
+  margin-bottom: 60px;
+}
+
+.addUser a {
+  text-decoration: none;
+  background-color:  rgb(67, 111, 255);
+  color: rgb(233, 230, 230);
+  padding: 5px;
+  border-radius: 5px;
+}

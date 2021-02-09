@@ -1,0 +1,15 @@
+.table {
+  background-color: rgb(67, 111, 255);
+  color: rgb(233, 230, 230);
+  margin-left: 20vw;
+  width: 862px;
+  padding: 8px;
+}
+
+.table #tableName {
+  width: 238px;
+}
+
+.table #tablecpf {
+  width: 148px;
+}

@@ -1,17 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from '../actions';
-import Employee from './employee'
+import Employee from './Employee'
 import EditEmplooye from "./EditEmplooye";
+import { Link } from 'react-router-dom';
+import HeaderTable from './HeaderTable'
 import "./List.css";
+import Header from "./Header";
 
 class List extends React.Component {
   render() {
     const { list } = this.props;
-    console.log(list)
     return(
       <div>
-        {/* <h1>Lista de funcionários</h1> */}
+        <section className="subtitle" >
+          <h1>Lista de Usuários </h1>
+        </section>
+        <section className="addUser">
+          <Link to='/inpustlist'> Cadastrar Novo Usuário </Link>
+        </section>
+        <HeaderTable />
         { list.map( ( employee ) =>
         (employee.editing )
         ? < EditEmplooye key={ employee.id } employeeid={ employee.id } />

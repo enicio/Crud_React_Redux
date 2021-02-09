@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { Link } from 'react-router-dom';
 import './InputList.css'
 class InputsList extends React.Component {
   constructor(props) {
@@ -28,6 +29,12 @@ class InputsList extends React.Component {
     const { name , cpf , salary , discount , dependents  } = this.state;
     return (
       <div className="fields">
+        <section className="subtitle">
+          <h1>Cadastro de Usuário</h1>
+        </section>
+        <section className="addUser">
+          <Link to="/"> Usuários cadastrados </Link>
+        </section>
         <form className="forms" onSubmit={this.handleSubmit}>
         <label>
           Nome
@@ -50,7 +57,7 @@ class InputsList extends React.Component {
         />
         </label>
         <label>
-          Salário
+          Salário Bruto
         <input
           value={salary}
           name='salary'

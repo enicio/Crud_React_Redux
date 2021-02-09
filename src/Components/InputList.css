@@ -5,9 +5,12 @@
 }
 
 .forms {
+  background-color: rgb(212, 212, 212);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   font-size: medium;
+  padding: 15px;
 }
 
 .forms input {
@@ -15,3 +18,9 @@
   align-items: flex-end;
   margin: 5px;
 }
+
+.subtitle {
+  display: flex;
+  align-items: center;
+}
+

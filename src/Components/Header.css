@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: brown;
+}
+
+.title {
+  color: rgb(230, 230, 230);
+  display: flex;
+  text-align: center;
+}

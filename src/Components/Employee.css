@@ -1,12 +1,17 @@
+.dataAndButtons {
+  display: flex;
+}
+
 .section {
   text-align: center;
   align-content: space-between;
   background-color: #6d6a6a;
   border-radius: 3px;
   display: flex;
-  margin: 10px;
+  margin-left: 20vw;
+  margin-right: 0;
   padding: 5px;
-  width: 800px;
+  width: 850px;
 }
 
 .section span {
@@ -17,4 +22,35 @@
     margin: 2px;
     padding: 3px;
     width: 150px;
+    height: 18px;
+}
+
+.buttonsDeleteAndEdit {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.buttonsDeleteAndEdit button {
+  margin-top: 2px;
+  height: 35px;
+}
+
+.section #name {
+  width: 220px;
+}
+
+.section #cpf {
+  width: 160px;
+}
+
+.section #salary {
+  width: 85px;
+}
+
+.section #discount {
+  width: 85px;
+}
+
+.section #dependents {
+  width: 85px;
 }

@@ -50,15 +50,15 @@ class EditEmplooye extends React.Component {
     return(
       <div className="editForm">
         <input name="name" onChange={ (event) => this.handleChange(event)}
-               type="text" placeholder={ name } ></input>
+               type="text" className="name" placeholder={ name } ></input>
         <input name="cpf" onChange={ (event) => this.handleChange(event)}
-               type="text" placeholder={ cpf }></input>
-        <input name="discount" onChange={ (event) => this.handleChange(event) }
-               type="text" placeholder={ discount }></input>
-        <input name="dependents" onChange={ (event) => this.handleChange(event) }
-               type="text" placeholder={ dependents }></input>
+               type="text" className="cpf" placeholder={ cpf }></input>
         <input name="salary" onChange={ (event) => this.handleChange(event) }
-              type="text" placeholder={ salary }></input>
+              type="text" className="salary" placeholder={ salary }></input>
+        <input name="discount" onChange={ (event) => this.handleChange(event) }
+               type="text" className="discount" placeholder={ discount }></input>
+        <input name="dependents" onChange={ (event) => this.handleChange(event) }
+               type="text" className="dependents" placeholder={ dependents }></input>
         <button onClick={ () => update( id, this.state ) }> Salvar </button>
      </div>
     );

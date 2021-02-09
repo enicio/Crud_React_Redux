@@ -4,9 +4,9 @@
   background-color: #6d6a6a;
   border-radius: 3px;
   display: flex;
-  margin: 10px;
+  margin-left: 20vw;
   padding: 5px;
-  width: 800px;
+  width: 850px;
 }
 
 .editForm input {
@@ -16,5 +16,25 @@
   font-size: 15px;
   margin: 2px;
   padding: 3px;
-  width: 136px;
+  width: 100px;
+}
+
+.editForm .name {
+  width: 252px;
+}
+
+.editForm .cpf {
+  width: 120px;
+}
+
+.editForm .salary {
+  width: 80px;
+}
+
+.editForm .discount {
+  width: 80px;
+}
+
+.editForm .dependents {
+  width: 80px;
 }
