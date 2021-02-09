@@ -6,7 +6,18 @@ export const addAssignment = (value) => ({
 
  export const delAssignment = (id) => ({
   type: 'DEL_ELEMENT',
-  value : id
+  id : id
+ });
+
+ export const editAssignment = (id) => ({
+  type: 'EDIT_ELEMENT',
+  id : id
+ });
+
+ export const updateAssignment = (id, data) => ({
+  type: 'UPDATE_ELEMENT',
+  id : id,
+  data : data
  });
 
 // export default addAssignment;

@@ -1,0 +1,20 @@
+.editForm {
+  text-align: center;
+  align-content: space-between;
+  background-color: #6d6a6a;
+  border-radius: 3px;
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+  width: 800px;
+}
+
+.editForm input {
+  background-color: rgb(212, 212, 212);
+  border-radius: 3px;
+  color: black;
+  font-size: 15px;
+  margin: 2px;
+  padding: 3px;
+  width: 136px;
+}

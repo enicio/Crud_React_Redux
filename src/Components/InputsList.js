@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-
+import './InputList.css'
 class InputsList extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +12,7 @@ class InputsList extends React.Component {
       salary: '',
       discount: '',
       dependents: '',
+      editing: false,
      };
   }
 
@@ -22,39 +23,15 @@ class InputsList extends React.Component {
     })
   }
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(e.target)
-  //   const name = this.getName.value;
-  //   const cpf = this.getCPF.value;
-  //   const salary = this.getSalary.value;
-  //   const discount = this.getDiscount.value;
-  //   const dependents = this.getDependents.value;
-  //   console.log(name, cpf, salary, discount, dependents);
-
-  //   this.setState({
-  //     id: Math.random(),
-  //     name: name,
-  //     cpf: cpf,
-  //     salary: salary,
-  //     discount: discount,
-  //     dependents: dependents,
-  //   })
-
-  // }
-
   render() {
-    console.log(this.state)
     const { add } = this.props;
-    console.log(this.props)
     const { name , cpf , salary , discount , dependents  } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="fields">
+        <form className="forms" onSubmit={this.handleSubmit}>
         <label>
           Nome
         <input
-          ref={(input)=>this.getName = input}
           value={name}
           name='name'
           type="text"
@@ -65,7 +42,6 @@ class InputsList extends React.Component {
         <label>
           CPF
         <input
-          ref={(input)=>this.getCPF = input}
           value={cpf}
           name='cpf'
           type="text"
@@ -76,7 +52,6 @@ class InputsList extends React.Component {
         <label>
           Salário
         <input
-          ref={(input)=>this.getSalary = input}
           value={salary}
           name='salary'
           type="number"
@@ -87,7 +62,6 @@ class InputsList extends React.Component {
         <label>
           Desconto da previdência
         <input
-          ref={(input)=>this.getDiscount = input}
           value={discount}
           name='discount'
           type="number"
@@ -97,7 +71,6 @@ class InputsList extends React.Component {
         <label>
           Número de dependentes
         <input
-          ref={(input)=>this.getDependents = input}
           value={dependents}
           name='dependents'
           type="number"

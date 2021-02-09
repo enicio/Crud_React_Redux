@@ -1,29 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from '../actions';
+import Employee from './employee'
+import EditEmplooye from "./EditEmplooye";
+import "./List.css";
 
 class List extends React.Component {
   render() {
-    const { lista , del } = this.props;
-
+    const { list } = this.props;
+    console.log(list)
     return(
       <div>
-        <h1>OPS</h1>
-        { lista.map( ( employee, index) =>
-        <section key={ employee.id } onClick={ () => del(this.props.lista[index].id)} >
-        <span>{ employee.name } </span>
-        <span>{ employee.cpf } </span>
-        <span>{ employee.discount } </span>
-        <span>{ employee.dependents } </span>
-        <span>{ employee.salary }</span>
-        </section>) }
+        {/* <h1>Lista de funcionários</h1> */}
+        { list.map( ( employee ) =>
+        (employee.editing )
+        ? < EditEmplooye key={ employee.id } employeeid={ employee.id } />
+        : <Employee key={ employee.id } employee={ employee } />
+        )}
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
-  lista: state.listReducer,
+  list: state.listReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
