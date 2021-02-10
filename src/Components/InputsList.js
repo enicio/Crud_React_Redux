@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,11 @@ class InputsList extends React.Component {
       discount: '',
       dependents: '',
       editing: false,
+      shouldRedirect: false,
      };
+
+     this.updateStatesAndEnableRedirect = this.updateStatesAndEnableRedirect.bind(this);
+
   }
 
   handleChange(event) {
@@ -24,9 +29,22 @@ class InputsList extends React.Component {
     })
   }
 
+  updateStatesAndEnableRedirect() {
+    this.setState({
+      shouldRedirect: true,
+    })
+  }
+
   render() {
     const { add } = this.props;
-    const { name , cpf , salary , discount , dependents  } = this.state;
+    const { name , cpf , salary , discount , dependents , shouldRedirect  } = this.state;
+
+    if (shouldRedirect) {
+      return (
+        <Redirect to="/" />
+      );
+    }
+
     return (
       <div className="fields">
         <section className="subtitle">
@@ -85,7 +103,8 @@ class InputsList extends React.Component {
         />
         </label>
         </form>
-        <button onClick={() => add(this.state)}>
+        {/* <button onClick={() => add(this.state)}> */}
+        <button onClick={ () => { add(this.state); this.updateStatesAndEnableRedirect();  } }>
           Adicionar Usuário
         </button>
       </div>

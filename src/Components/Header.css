@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: brown;
+  background-color: rgb(16, 42, 190);
 }
 
 .title {

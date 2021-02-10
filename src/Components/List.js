@@ -6,7 +6,7 @@ import EditEmplooye from "./EditEmplooye";
 import { Link } from 'react-router-dom';
 import HeaderTable from './HeaderTable'
 import "./List.css";
-import Header from "./Header";
+
 
 class List extends React.Component {
   render() {
