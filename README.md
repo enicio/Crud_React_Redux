@@ -6,6 +6,6 @@ Para testar
 
 cd Crud_React_Redux
 
-# `npm install`
+ `npm install`
 
-# `yarn start`
+ `yarn start`
