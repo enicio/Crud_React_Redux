@@ -54,7 +54,7 @@ class EditEmplooye extends React.Component {
         <input name="cpf" onChange={ (event) => this.handleChange(event)}
                type="text" className="cpf" placeholder={ cpf }></input>
         <input name="salary" onChange={ (event) => this.handleChange(event) }
-              type="text" className="salary" placeholder={ salary }></input>
+               type="text" className="salary" placeholder={ salary }></input>
         <input name="discount" onChange={ (event) => this.handleChange(event) }
                type="text" className="discount" placeholder={ discount }></input>
         <input name="dependents" onChange={ (event) => this.handleChange(event) }

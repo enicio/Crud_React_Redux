@@ -25,7 +25,7 @@ class InputsList extends React.Component {
   handleChange(event) {
     this.setState({
       id: Math.random() + 1,
-      [event.target.name]: event.target.value
+        [event.target.name]: event.target.value
     })
   }
 
@@ -54,56 +54,55 @@ class InputsList extends React.Component {
           <Link to="/"> Usuários cadastrados </Link>
         </section>
         <form className="forms" onSubmit={this.handleSubmit}>
-        <label>
-          Nome
-        <input
-          value={name}
-          name='name'
-          type="text"
-          placeholder="Digite o nome"
-          onChange={ (event) => this.handleChange(event)}
-        />
-        </label>
-        <label>
-          CPF
-        <input
-          value={cpf}
-          name='cpf'
-          type="text"
-          placeholder="Digite a cpf"
-          onChange={ (event) => this.handleChange(event)}
-        />
-        </label>
-        <label>
-          Salário Bruto
-        <input
-          value={salary}
-          name='salary'
-          type="number"
-          placeholder="Digite o salário"
-          onChange={ (event) => this.handleChange(event)}
-        />
-        </label>
-        <label>
-          Desconto da previdência
-        <input
-          value={discount}
-          name='discount'
-          type="number"
-          onChange={ (event) => this.handleChange(event)}
-        />
-        </label>
-        <label>
-          Número de dependentes
-        <input
-          value={dependents}
-          name='dependents'
-          type="number"
-          onChange={ (event) => this.handleChange(event)}
-        />
-        </label>
+          <label>
+            Nome
+            <input
+              value={name}
+              name='name'
+              type="text"
+              placeholder="Digite o nome"
+              onChange={ (event) => this.handleChange(event)}
+            />
+          </label>
+          <label>
+            CPF
+            <input
+              value={cpf}
+              name='cpf'
+              type="text"
+              placeholder="Digite a cpf"
+              onChange={ (event) => this.handleChange(event)}
+            />
+          </label>
+          <label>
+            Salário Bruto
+            <input
+              value={salary}
+              name='salary'
+              type="number"
+              placeholder="Digite o salário"
+              onChange={ (event) => this.handleChange(event)}
+            />
+          </label>
+          <label>
+            Desconto da previdência
+            <input
+              value={discount}
+              name='discount'
+              type="number"
+              onChange={ (event) => this.handleChange(event)}
+            />
+          </label>
+          <label>
+            Número de dependentes
+            <input
+              value={dependents}
+              name='dependents'
+              type="number"
+              onChange={ (event) => this.handleChange(event)}
+            />
+          </label>
         </form>
-        {/* <button onClick={() => add(this.state)}> */}
         <button onClick={ () => { add(this.state); this.updateStatesAndEnableRedirect();  } }>
           Adicionar Usuário
         </button>

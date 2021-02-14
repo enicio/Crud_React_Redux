@@ -3,7 +3,6 @@ export const addAssignment = (value) => ({
   value : value
  });
 
-
  export const delAssignment = (id) => ({
   type: 'DEL_ELEMENT',
   id : id
@@ -19,5 +18,3 @@ export const addAssignment = (value) => ({
   id : id,
   data : data
  });
-
-// export default addAssignment;
