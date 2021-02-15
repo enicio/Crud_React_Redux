@@ -1,7 +1,13 @@
 import * as data from "../data/pessoas.json";
-const employeeFromJson = data.default;
 
-const INITIAL_STATE = employeeFromJson;
+const employeesFromJson = data.default;
+
+localStorage.setItem('employee', JSON.stringify(employeesFromJson))
+
+employeesFromJson.map( (employeeFromJson) => employeeFromJson.id = Math.random() + 1);
+
+const INITIAL_STATE = employeesFromJson;
+console.log(employeesFromJson)
 
 function listReducer(state = INITIAL_STATE, action) {
   switch (action.type) {

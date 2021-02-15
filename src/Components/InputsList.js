@@ -19,7 +19,7 @@ class InputsList extends React.Component {
      };
 
      this.updateStatesAndEnableRedirect = this.updateStatesAndEnableRedirect.bind(this);
-
+     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -35,8 +35,14 @@ class InputsList extends React.Component {
     })
   }
 
-  render() {
+  handleSubmit(e) {
+    e.preventDefault()
     const { add } = this.props;
+    add(this.state)
+    this.updateStatesAndEnableRedirect()
+  }
+
+  render() {
     const { name , cpf , salary , discount , dependents , shouldRedirect  } = this.state;
 
     if (shouldRedirect) {
@@ -60,6 +66,7 @@ class InputsList extends React.Component {
               value={name}
               name='name'
               type="text"
+              required
               placeholder="Digite o nome"
               onChange={ (event) => this.handleChange(event)}
             />
@@ -70,6 +77,7 @@ class InputsList extends React.Component {
               value={cpf}
               name='cpf'
               type="text"
+              required
               placeholder="Digite a cpf"
               onChange={ (event) => this.handleChange(event)}
             />
@@ -80,6 +88,7 @@ class InputsList extends React.Component {
               value={salary}
               name='salary'
               type="number"
+              required
               placeholder="Digite o salário"
               onChange={ (event) => this.handleChange(event)}
             />
@@ -90,6 +99,7 @@ class InputsList extends React.Component {
               value={discount}
               name='discount'
               type="number"
+              required
               onChange={ (event) => this.handleChange(event)}
             />
           </label>
@@ -99,13 +109,14 @@ class InputsList extends React.Component {
               value={dependents}
               name='dependents'
               type="number"
+              required
               onChange={ (event) => this.handleChange(event)}
             />
           </label>
-        </form>
-        <button onClick={ () => { add(this.state); this.updateStatesAndEnableRedirect(); } }>
+          <button >
           Adicionar Usuário
         </button>
+        </form>
       </div>
     );
   }
