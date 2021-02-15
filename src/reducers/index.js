@@ -1,4 +1,7 @@
-const INITIAL_STATE = [];
+import * as data from "../data/pessoas.json";
+const employeeFromJson = data.default;
+
+const INITIAL_STATE = employeeFromJson;
 
 function listReducer(state = INITIAL_STATE, action) {
   switch (action.type) {

@@ -25,7 +25,7 @@ class InputsList extends React.Component {
   handleChange(event) {
     this.setState({
       id: Math.random() + 1,
-        [event.target.name]: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -103,7 +103,7 @@ class InputsList extends React.Component {
             />
           </label>
         </form>
-        <button onClick={ () => { add(this.state); this.updateStatesAndEnableRedirect();  } }>
+        <button onClick={ () => { add(this.state); this.updateStatesAndEnableRedirect(); } }>
           Adicionar Usuário
         </button>
       </div>

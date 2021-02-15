@@ -11,6 +11,7 @@ import "./List.css";
 class List extends React.Component {
   render() {
     const { list } = this.props;
+    console.log(list)
     return(
       <div>
         <section className="subtitle" >

@@ -16,7 +16,9 @@ class Employee extends React.Component {
   salaryBase( salary, discount, quantityOfDependents ) {
     const aliquotAndPortion = this.PortionToBeDeductedAndAliquot(salary)
     const deductionPerDependent = 164.56;
-    const SalaryBaseIR = ( salary - discount - deductionPerDependent ) * quantityOfDependents;
+    const haveDependents = ( Number(quantityOfDependents) > 0 )? quantityOfDependents : 1 ;
+    const SalaryBaseIR = ( salary - discount - deductionPerDependent ) *
+    haveDependents;
     const discountIRRF = ( SalaryBaseIR ) * aliquotAndPortion[0] - aliquotAndPortion[1]
     return (
       <span>{ discountIRRF }</span>
