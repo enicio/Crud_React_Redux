@@ -21,9 +21,10 @@ class EditEmplooye extends React.Component {
   componentDidMount() {
     const { list , employeeid } = this.props;
     const employeeToUpdate = list.filter( (employee) => employee.id === employeeid )
-    const { name, cpf, discount, dependents, salary} = employeeToUpdate[0];
+    const { id, name, cpf, discount, dependents, salary} = employeeToUpdate[0];
 
     this.setState({
+      id : id,
       name: name,
       cpf: cpf,
       salary: salary,
@@ -39,28 +40,29 @@ class EditEmplooye extends React.Component {
       [event.target.name]: event.target.value
     })
   }
+ 
 
   render() {
-    const { list , employeeid , update } = this.props;
-    console.log(employeeid)
-
-    const employeeToUpdate = list.filter( (employee) => employee.id === employeeid )
-    const { id, name, cpf, discount, dependents, salary} = employeeToUpdate[0];
+    const { update } = this.props;
+    const  employee  = this.state;
+    const { id, name, cpf, discount, dependents, salary} = employee;
 
     return(
-      <div className="editForm">
-        <input name="name" onChange={ (event) => this.handleChange(event)}
-               type="text" className="name" placeholder={ name } ></input>
-        <input name="cpf" onChange={ (event) => this.handleChange(event)}
-               type="text" className="cpf" placeholder={ cpf }></input>
-        <input name="salary" onChange={ (event) => this.handleChange(event) }
-               type="text" className="salary" placeholder={ salary }></input>
-        <input name="discount" onChange={ (event) => this.handleChange(event) }
-               type="text" className="discount" placeholder={ discount }></input>
-        <input name="dependents" onChange={ (event) => this.handleChange(event) }
-               type="text" className="dependents" placeholder={ dependents }></input>
-        <button onClick={ () => update( id, this.state ) }> Salvar </button>
-     </div>
+      // <section className="editForm">
+        <form className="editForm" onSubmit={this.handleSubmit} >
+          <input name="name" onChange={ (event) => this.handleChange(event)}
+                type="text" className="name" placeholder={ name } required />
+          <input name="cpf" onChange={ (event) => this.handleChange(event)}
+                type="text" className="cpf" placeholder={ cpf } required />
+          <input name="salary" onChange={ (event) => this.handleChange(event) }
+                type="number" className="salary" placeholder={ salary } required />
+          <input name="discount" onChange={ (event) => this.handleChange(event) }
+                type="number" className="discount" placeholder={ discount } required />
+          <input name="dependents" onChange={ (event) => this.handleChange(event) }
+                type="number" className="dependents" placeholder={ dependents } required />
+          <button type="submit" onClick={ () => update( id, this.state ) }> Salvar </button>
+        </form>
+    //  </section>
     );
   }
 }
