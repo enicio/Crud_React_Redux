@@ -16,6 +16,9 @@ class EditEmplooye extends React.Component {
       dependents: '',
       editing: false,
      };
+
+     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   componentDidMount() {
@@ -40,29 +43,30 @@ class EditEmplooye extends React.Component {
       [event.target.name]: event.target.value
     })
   }
- 
+
+  handleSubmit( id ) {
+    const { update } = this.props;
+    update( id, this.state)
+  }
 
   render() {
-    const { update } = this.props;
     const  employee  = this.state;
     const { id, name, cpf, discount, dependents, salary} = employee;
 
     return(
-      // <section className="editForm">
-        <form className="editForm" onSubmit={this.handleSubmit} >
-          <input name="name" onChange={ (event) => this.handleChange(event)}
+        <form className="editForm" onSubmit={ () => this.handleSubmit( id )} >
+          <input value={ name } name="name" onChange={ (event) => this.handleChange(event)}
                 type="text" className="name" placeholder={ name } required />
-          <input name="cpf" onChange={ (event) => this.handleChange(event)}
+          <input value={ cpf } name="cpf" onChange={ (event) => this.handleChange(event)}
                 type="text" className="cpf" placeholder={ cpf } required />
-          <input name="salary" onChange={ (event) => this.handleChange(event) }
+          <input value={ salary } name="salary" onChange={ (event) => this.handleChange(event) }
                 type="number" className="salary" placeholder={ salary } required />
-          <input name="discount" onChange={ (event) => this.handleChange(event) }
+          <input value={ discount } name="discount" onChange={ (event) => this.handleChange(event) }
                 type="number" className="discount" placeholder={ discount } required />
-          <input name="dependents" onChange={ (event) => this.handleChange(event) }
+          <input value={ dependents } name="dependents" onChange={ (event) => this.handleChange(event) }
                 type="number" className="dependents" placeholder={ dependents } required />
-          <button type="submit" onClick={ () => update( id, this.state ) }> Salvar </button>
+          <button type="submit" > Salvar </button>
         </form>
-    //  </section>
     );
   }
 }
