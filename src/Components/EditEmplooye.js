@@ -35,7 +35,6 @@ class EditEmplooye extends React.Component {
       dependents: dependents,
       editing: false,
      });
-
   }
 
   handleChange(event) {
